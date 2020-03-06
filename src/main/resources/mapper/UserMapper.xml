@@ -16,8 +16,16 @@
             </if>
         </where>
     </select>
+    <!--根据邮箱得到用户-->
+    <select id="getUserByEmail" resultMap="userMap">
+        select * from user where email = #{email}
+    </select>
     <!--删除用户-->
     <delete id="delUser" parameterType="Integer">
         delete from user where user_id = #{userId}
     </delete>
+    <!--保存用户-->
+    <insert id="saveUser" parameterType="User" useGeneratedKeys="true" keyProperty="userId">
+        insert into user values(null,#{userName},#{password},null,null,#{email})
+    </insert>
 </mapper>

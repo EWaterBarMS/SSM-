@@ -25,10 +25,20 @@ public class UserServiceImpl implements UserService {
         return pageInfo;
     }
 
+    //根据邮箱查询用户
+    public User getUserByEmail(String email){
+        return userDao.getUserByEmail(email);
+    }
+
     //删除用户业务实现
     @Override
     public void delUser(Integer userId) {
         userDao.delUser(userId);
+    }
+
+    @Override
+    public void saveUser(User u) {
+        userDao.saveUser(u);
     }
 
 }
