@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.etc.dao.GoodsDao">
+
+    <!--查询所有货物-->
+    <select id="query" parameterType="com.etc.entity.Goods" resultType="com.etc.entity.Goods">
+        select * from goods
+        <where>
+            <if test="goods_name != null and goods_name != ''">
+                goods_name like "%"#{goods_name}"%"
+            </if>
+        </where>
+    </select>
+
+    <!--加载单个货物-->
+    <select id="get" resultType="com.etc.entity.Goods">
+        select * from goods where goods_id = #{gid}
+    </select>
+
+    <!--添加货物-->
+    <insert id="add" parameterType="com.etc.entity.Goods" useGeneratedKeys="true" keyProperty="goods_id">
+        insert into goods(goods_name,pic,production,guarantee,price,counts,mark)
+           values(#{goods_name},#{pic},#{production},#{guarantee},#{price},#{counts},#{mark})
+    </insert>
+
+    <!--修改货物-->
+    <update id="mod" parameterType="com.etc.entity.Goods">
+        update goods set goods_name = #{goods_name},
+                           pic = #{pic},
+                           production = #{production},
+                           guarantee = #{guarantee},
+                           price = #{price},
+                           counts = #{counts},
+                           mark = #{mark}
+        where goods_id = #{goods_id}
+    </update>
+
+    <!--删除货物-->
+    <delete id="del">
+        delete  from goods where goods_id = #{goods_id}
+    </delete>
+</mapper>
