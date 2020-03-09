@@ -12,7 +12,7 @@
         select * from user
         <where>
             <if test="userName != null and userName != ''">
-                user_name = #{userName}
+                user_name like "%"#{userName}"%"
             </if>
         </where>
     </select>

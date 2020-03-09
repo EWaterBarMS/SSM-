@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +26,7 @@ public class UserController {
     @RequestMapping("/query")
     @ResponseBody
     public PageInfo<User> ajaxpagequery(User u, @RequestParam(value = "pageNum",required = true,defaultValue = "1") Integer pageNum,
-                                           @RequestParam(value = "pageSize",required = true,defaultValue = "6") Integer pageSize){
+                                           @RequestParam(value = "pageSize",required = true,defaultValue = "5") Integer pageSize){
         return userService.queryUser(u,pageNum,pageSize);
     }
 

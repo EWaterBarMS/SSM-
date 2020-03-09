@@ -29,12 +29,14 @@
         <div class="layui-tab">
 
             <blockquote class="layui-elem-quote news_search">
+                <form action="user/query">
                 <div class="layui-inline">
                     <div class="layui-input-inline">
-                        <input value="" placeholder="请输入关键字" class="layui-input search_input" type="text">
+                        <input id="search_input" placeholder="请输入用户名" name="userName" class="layui-input search_input">
                     </div>
-                    <a class="layui-btn search_btn">查询</a>
+                    <button class="layui-btn search_btn" id="search_button" type="submit">查询</button>
                 </div>
+                </form>
             </blockquote>
 
             <div class="layui-tab-content larry-personal-body clearfix mylog-info-box">
@@ -85,7 +87,7 @@
                         "                            <td>"+u.phone+"</td>\n" +
                         "                            <td>"+u.email+"</td>\n" +
                         "                            <td>\n" +
-                        "                                <a href='javascript:editUser(\"+u.userId+\")' class=\"layui-btn layui-btn-small\">详情</a>&nbsp;<a href='javascript:delUser("+u.userId+")' class=\"layui-btn layui-btn-small\"><i class=\"iconfont icon-shanchu1\"/>删除</a>\n" +
+                        "                                <a href='javascript:editUser("+u.userId+")' class=\"layui-btn layui-btn-small\">详情</a>&nbsp;<a href='javascript:delUser("+u.userId+")' class=\"layui-btn layui-btn-small\"><i class=\"iconfont icon-shanchu1\"/>删除</a>\n" +
                         "                            </td>\n" +
                         "                        </tr>";
                 })
@@ -133,7 +135,7 @@
         });
         $("#search_button").click(function () {
             var val = $("#search_input").val();//取文本输入框中输入的值
-            $("input[name=sName]").val(val);//设置到queryform表单中sName中
+            $("input[name=userName]").val(val);//设置到queryform表单中oName中
             $("#pageNum").val(1);
             ajaxSubmit();//调用ajaxForm表单方法
             return false;
