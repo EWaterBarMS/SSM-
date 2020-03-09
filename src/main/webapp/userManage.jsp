@@ -16,7 +16,8 @@
     <link rel="stylesheet" type="text/css" href="style/common/bootstrap/css/bootstrap.css" media="all">
     <link rel="stylesheet" type="text/css" href="style/common/global.css" media="all">
     <link rel="stylesheet" type="text/css" href="style/css/personal.css" media="all">
-    <link href="css/sweetalert.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/sweetalert.css" rel="stylesheet">
     <script src="js/jquery-3.3.1.js"></script>
     <script src="js/jquery.form.js"></script>
     <script src="js/bootstrap.min.js"></script>
