@@ -20,6 +20,10 @@
     <select id="getUserByEmail" resultMap="userMap">
         select * from user where email = #{email}
     </select>
+    <!--编辑用户信息-->
+    <select id="getUser" resultMap="userMap">
+        select * from user where user_id = #{userId}
+    </select>
     <!--删除用户-->
     <delete id="delUser" parameterType="Integer">
         delete from user where user_id = #{userId}

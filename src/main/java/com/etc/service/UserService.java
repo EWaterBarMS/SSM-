@@ -14,6 +14,9 @@ public interface UserService {
     //根据用户号删除用户
     public void delUser(Integer userId);
 
+    //编辑用户信息
+    public User getUser(Integer userId);
+
     //保存注册用户
     public void saveUser(User u);
 
