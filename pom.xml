@@ -95,6 +95,7 @@
           <version>${spring.version}</version>
       </dependency>
 
+
       <!-- JSON转换器需要的jar包 将java对象转化成json对象 -->
       <dependency>
           <groupId>com.fasterxml.jackson.core</groupId>
