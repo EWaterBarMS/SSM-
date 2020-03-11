@@ -18,7 +18,7 @@ public class IndexController {
     //登录验证
     @RequestMapping("/logincheck")
     public ModelAndView checkLogin(String email,String pwd){
-        ModelAndView mv = new ModelAndView("index");
+        ModelAndView mv = new ModelAndView("redirect:/index.jsp");
         User user = userService.getUserByEmail(email);
         if(user!=null && user.getPassword().equals(pwd)){
             mv.setViewName("userManage");
