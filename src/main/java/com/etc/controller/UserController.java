@@ -5,6 +5,8 @@ import com.etc.service.impl.UserServiceImpl;
 import com.github.pagehelper.PageInfo;
 import com.google.gson.Gson;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -13,6 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
@@ -50,5 +53,13 @@ public class UserController {
         } else {
             resp.getWriter().write(result);
         }
+    }
+
+    //编辑用户信息
+    @RequestMapping("/edit")
+    public ModelAndView editUser(Integer userId){
+        ModelAndView mv = new ModelAndView("getUser");
+        mv.addObject("u",userService.getUser(userId));
+        return mv;
     }
 }

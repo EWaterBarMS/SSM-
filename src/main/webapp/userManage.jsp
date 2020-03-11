@@ -87,7 +87,7 @@
                         "                            <td>"+u.phone+"</td>\n" +
                         "                            <td>"+u.email+"</td>\n" +
                         "                            <td>\n" +
-                        "                                <a href='javascript:editUser("+u.userId+")' class=\"layui-btn layui-btn-small\">详情</a>&nbsp;<a href='javascript:delUser("+u.userId+")' class=\"layui-btn layui-btn-small\"><i class=\"iconfont icon-shanchu1\"/>删除</a>\n" +
+                        "                                <a href='user/edit?userId="+u.userId+"' class=\"layui-btn layui-btn-small\">详情</a>&nbsp;<a href='javascript:delUser("+u.userId+")' class=\"layui-btn layui-btn-small\"><i class=\"iconfont icon-shanchu1\"/>删除</a>\n" +
                         "                            </td>\n" +
                         "                        </tr>";
                 })
@@ -151,7 +151,7 @@
                 data:{
                     userId : id
                 },
-                dataType : "jsonp",//数据类型为json
+                dataType : "json",//数据类型为json
                 jsonp:"jsoncallback",
                 success : function(data){
                     if(data=="true"){

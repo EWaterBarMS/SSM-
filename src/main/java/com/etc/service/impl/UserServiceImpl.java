@@ -36,11 +36,13 @@ public class UserServiceImpl implements UserService {
         userDao.delUser(userId);
     }
 
+    //编辑用户信息
     @Override
     public User getUser(Integer userId) {
         return userDao.getUser(userId);
     }
 
+    //保存用户信息
     @Override
     public void saveUser(User u) {
         userDao.saveUser(u);
