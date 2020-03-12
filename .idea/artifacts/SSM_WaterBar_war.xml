@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="SSM-WaterBar:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="EWaterBarMS.war">
-      <element id="artifact" artifact-name="SSM-WaterBar:war exploded" />
-    </root>
-  </artifact>
-</component>

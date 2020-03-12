@@ -229,7 +229,7 @@
                     <div class="form-group">
                         <label for="goods_id_mod" class="col-sm-2 control-label">商品编号</label>
                         <div class="col-sm-10">
-                            <input type="text" name="goods_id" class="form-control" id="goods_id_mod" placeholder="商品编号">
+                            <input type="text" disabled name="goods_id" class="form-control" id="goods_id_mod" placeholder="商品编号">
                         </div>
                     </div>
                     <div class="form-group">

@@ -2,10 +2,12 @@ package com.etc.controller;
 
 import com.etc.entity.Goods;
 import com.etc.service.GoodsService;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
@@ -18,6 +20,20 @@ public class GoodsController {
 
     @Autowired
     private GoodsService goodsService;
+
+
+    //用户获取商品信息
+    @RequestMapping("/query")
+    public ModelAndView pageQuery(Goods g,
+                                  @RequestParam(value = "pageNum",required = true,defaultValue = "1") Integer pageNum,
+                                  @RequestParam(value = "pageSize",required = true,defaultValue = "5") Integer pageSize){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("goodsList");
+        PageInfo<Goods> p = goodsService.pageQuery(g,pageNum,pageSize);
+        mv.addObject("p",p);
+        mv.addObject("gname",g.getGoods_name());
+        return mv;
+    }
 
     /**
      * 查询所有

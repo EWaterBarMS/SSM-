@@ -1,10 +1,14 @@
 package com.etc.service;
 
 import com.etc.entity.Goods;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
 
 public interface GoodsService {
+
+    //分页加模糊查询
+    PageInfo<Goods> pageQuery(Goods g,Integer pageNum,Integer pageSize);
     //查询所有货物
     List<Goods> query(Goods g);
 
