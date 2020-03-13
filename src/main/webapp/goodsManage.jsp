@@ -5,10 +5,10 @@
     <title>商品列表</title>
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
     <%--<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>--%>
-    <script src="js/jquery-3.2.1.js" type="text/javascript"></script>
-    <script src="js/jquery.form.js" type="text/javascript"></script>
-    <script src="js/jquery.formjson.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.form.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.formjson.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
 </head>
 <body>
 <hr>
@@ -16,7 +16,7 @@
     <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">新加商品</button>
 </div><br>
 
-<table border="1" width="100%" style="text-align: center" id="queryTable">
+<table class="table table-striped" width="100%" style="text-align: center" id="queryTable">
     <thead>
     <tr>
         <td>商品编号</td>
@@ -170,7 +170,7 @@
                     <div class="form-group">
                         <label for="guarantee" class="col-sm-2 control-label">保质期</label>
                         <div class="col-sm-10">
-                            <input type="text" name="guarantee" class="form-control" id="guarantee" placeholder="保质期">
+                            <input type="number" name="guarantee" class="form-control" id="guarantee" placeholder="保质期">
                         </div>
                     </div>
                     <div class="form-group">
@@ -229,7 +229,7 @@
                     <div class="form-group">
                         <label for="goods_id_mod" class="col-sm-2 control-label">商品编号</label>
                         <div class="col-sm-10">
-                            <input type="text" disabled name="goods_id" class="form-control" id="goods_id_mod" placeholder="商品编号">
+                            <input type="text"  name="goods_id" class="form-control" id="goods_id_mod" placeholder="商品编号">
                         </div>
                     </div>
                     <div class="form-group">
@@ -271,12 +271,13 @@
                     <div class="form-group">
                         <label for="myfile_mod" class="col-sm-2 control-label">类型图片</label>
                         <div class="col-sm-10">
-                            <input type="file" name="myfile" class="form-control" id="myfile_mod" placeholder="类型图片">
+                            <div style="float: left"><img id="pic_mod" width="50px" height="50px"></div>
+                            <div style="float: left;margin-left: 20px;align-items: center"><input type="file" name="myfile" class="form-control" id="myfile_mod" placeholder="类型图片"></div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <img id="pic_mod" width="50px">
-                    </div>
+                    <%--<div class="form-group">s
+                        <img id="pic_mod" width="50px" height="50px">
+                    </div>--%>
                 </form>
 
             </div>

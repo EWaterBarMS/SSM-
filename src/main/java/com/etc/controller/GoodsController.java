@@ -67,7 +67,11 @@ public class GoodsController {
     @PostMapping("/managemod")
     public String update(Goods g, MultipartFile myfile, HttpServletRequest request){
         //上传图片并获得返回的文件名
-        String filename = upload2(myfile,request);
+        String filename = null;
+        if (myfile != null) {
+            filename = upload2(myfile,request);
+        }
+
         //设置图片
         if(filename!=null)
             g.setPic(filename);

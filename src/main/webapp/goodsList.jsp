@@ -11,7 +11,7 @@
 <div style="margin-left: 20px;margin-right: 20px">
     <div style="margin-top: 30px">
         <form action="${pageContext.request.contextPath}/goods/query" method="post" id="queryForm">
-            <input type="text" value="${gname}" name="goods_name"/>
+            <input type="text" value="${gname}" name="goods_name" id="queryText"/>
             <input type="submit" value="查询">
             <input name="pageNum" id="pageNum" value="${p.pageNum}" hidden/>
             <input name="pagSize" id="pageSize" value="${p.pageSize}" hidden/>
@@ -73,12 +73,16 @@
     </div>
 </div>
 <script>
+    $(document).ready(function(){
+        $("#queryText").blur(function () {
+            $("#queryForm").submit();
+        });
+    });
+
     function getPage(pageNum){
         $("#pageNum").val(pageNum);
         $("#queryForm").submit();
     }
 </script>
-
-
 </body>
 </html>
